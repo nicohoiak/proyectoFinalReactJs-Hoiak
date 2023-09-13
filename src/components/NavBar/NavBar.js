@@ -11,9 +11,6 @@ const NavBar =() => {
                 <NavLink to ={`/category/Computadoras`}>Computadoras</NavLink>
                 <NavLink to ={`/category/Procesadores`}>Procesadores</NavLink>
                 <NavLink to ={`/category/PlacasDeVideo`}>Placas de Video</NavLink>
-                
-                <button>Procesadores</button>
-                <button>Placas de video</button>
             </div>
             <CartWidget />
         </nav>
