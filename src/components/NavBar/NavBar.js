@@ -8,9 +8,9 @@ const NavBar =() => {
             <h3>Compupartes</h3>
             </Link>
             <div>
-                <NavLink to ={`/category/Computadoras`}>Computadoras</NavLink>
-                <NavLink to ={`/category/Procesadores`}>Procesadores</NavLink>
-                <NavLink to ={`/category/PlacasDeVideo`}>Placas de Video</NavLink>
+                <NavLink to ={`/category/Computadoras`}>computadoras</NavLink>
+                <NavLink to ={`/category/Procesadores`}>procesadores</NavLink>
+                <NavLink to ={`/category/PlacasDeVideo`}>placasdevideo</NavLink>
             </div>
             <CartWidget />
         </nav>

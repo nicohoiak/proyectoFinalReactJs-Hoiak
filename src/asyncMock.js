@@ -4,7 +4,7 @@ const products = [
         name: 'Notebook VAIO',
         price: 200000,
         category: 'computadoras',
-        img: 'src\components\assets\img\NotebookVaio.png',
+        img: 'src/components/assets/img/NotebookVaio.png',
         stock: 10,
         description: 'Notebook vaio...'
     },
@@ -13,7 +13,7 @@ const products = [
         name: 'Procesador Ryzen',
         price: 150000,
         category: 'computadoras',
-        img: 'src\components\assets\img\procesadorRyzen.png',
+        img: 'src/components/assets/img/procesadorRyzen.png',
         stock: 10,
         description: 'Nuevo procesador Ryzen...'
     },
@@ -22,7 +22,7 @@ const products = [
         name: 'Placa de Video Nvidia 1050ti',
         price: 250000,
         category: 'computadoras',
-        img: 'src\components\assets\img\placadevideo.png',
+        img: 'src/components/assets/img/placadevideo.png',
         stock: 10,
         description: 'Nueva plada de video Nvidia..'
     },
@@ -33,6 +33,14 @@ export const getProducts = () => {
         setTimeout(()=>{
             resolve (products)
         }, 1000)
+    })
+}
+
+export const getProductByCategory = (category) => {
+    return new Promise ((resolve) =>{
+        setTimeout (()=>{
+            resolve (products.filter ((product)=> product.category===category))
+        }, 1000 )
     })
 }
 
