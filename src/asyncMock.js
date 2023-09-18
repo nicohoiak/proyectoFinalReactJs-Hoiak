@@ -12,7 +12,7 @@ const products = [
         id: '2',
         name: 'Procesador Ryzen',
         price: 150000,
-        category: 'computadoras',
+        category: 'procesadores',
         img: 'src/components/assets/img/procesadorRyzen.png',
         stock: 10,
         description: 'Nuevo procesador Ryzen...'
@@ -21,10 +21,10 @@ const products = [
         id: '3',
         name: 'Placa de Video Nvidia 1050ti',
         price: 250000,
-        category: 'computadoras',
+        category: 'placasdevideo',
         img: 'src/components/assets/img/placadevideo.png',
         stock: 10,
-        description: 'Nueva plada de video Nvidia..'
+        description: 'Nueva placa de video Nvidia..'
     },
 ]
 
