@@ -4,16 +4,16 @@ const products = [
         name: 'Notebook VAIO',
         price: 200000,
         category: 'computadoras',
-        img: 'src/components/assets/img/NotebookVaio.png',
+        img: 'src/components/assets/img/notebookvaio.png',
         stock: 10,
-        description: 'Notebook vaio...'
+        description: 'Nueva notebook vaio...'
     },
     {
         id: '2',
         name: 'Procesador Ryzen',
         price: 150000,
         category: 'procesadores',
-        img: 'src/components/assets/img/procesadorRyzen.png',
+        img: 'src/components/assets/img/procesador.png',
         stock: 10,
         description: 'Nuevo procesador Ryzen...'
     },
