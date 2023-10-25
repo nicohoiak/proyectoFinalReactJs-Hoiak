@@ -1,25 +1,15 @@
 import { useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-import { getDoc, doc } from 'firebase/firestore'
+import { collection, getDoc, doc } from 'firebase/firestore'
 import { db } from '../../Services/firebase'
 
 
-const ItemDetailContainer = () => {
+/* const ItemDetailContainer = () => {
     const [product, setProduct] = useState (null)
     const [loading, setLoading] = useState (true)
 
     const { itemId } = useParams(null)
-
-    /* useEffect(() => {
-        getProductById (itemId)
-            .then (response =>{
-            setProduct(response)
-            })
-            .catch(error => {
-            console.error(error)
-            })
-    },  [itemId]) */
 
     useEffect (() =>{
         setLoading(true)
@@ -45,6 +35,24 @@ const ItemDetailContainer = () => {
             <ItemDetail {...product} />
         </div>
     )
-}
+} */
 
-export default ItemDetailContainer
+const ItemDetailContainer = () => {
+    const [product, setProduct] = useState({});
+
+    const { itemId } = useParams();
+
+    useEffect(() => {
+        const collectionProduct = collection(db, "productos");
+        const referenciaDoc = doc(collectionProduct, itemId);
+        getDoc(referenciaDoc)
+            .then((res) => setProduct({ id: res.id, ...res.data() }))
+            .catch((error) => console.log(error));
+    }, []);
+    return (
+        <div>
+            <ItemDetail product={product} />
+        </div>
+    );
+};
+export default ItemDetailContainer;

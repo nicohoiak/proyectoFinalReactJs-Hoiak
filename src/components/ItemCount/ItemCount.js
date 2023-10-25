@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const ItemCount = ({stock, initial, onAdd}) => {
+/* const ItemCount = ({stock, initial, onAdd}) => {
     const [quantity, setQuantity] = useState (initial)
 
     const increment = () => {
@@ -28,7 +28,46 @@ const ItemCount = ({stock, initial, onAdd}) => {
         </div>
 )
 }
+ */
 
+const ItemCount = ({ inicial, stock, adicion }) => {
+    const [cantidad, setCantidad] = useState(inicial);
+
+    const suma = () => {
+        if (cantidad < stock) {
+            setCantidad(cantidad + 1);
+        }
+    };
+
+    const resta = () => {
+        if (cantidad > 1) {
+            setCantidad(cantidad - 1);
+        }
+    };
+
+    return (
+        <div>
+            <div>
+                <button onClick={resta}>
+                    -
+                </button>
+                <h3>{cantidad}</h3>
+                <button onClick={suma}>
+                    +
+                </button>
+            </div>
+            <div>
+                <button
+                    onClick={() => adicion(cantidad)}
+                    disable={cantidad === 0}
+                >
+                    {" "}
+                    Comprar
+                </button>
+            </div>
+        </div>
+    );
+};
 
 
 export default ItemCount

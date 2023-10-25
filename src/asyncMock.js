@@ -1,53 +1,54 @@
 const products = [
     {
         id: '1',
-        name: 'Notebook VAIO',
-        price: 200000,
-        category: 'computadoras',
+        nombre: 'Notebook VAIO',
+        precio: 200000,
+        catergioria: 'computadoras',
         img: 'src/components/assets/img/notebookvaio.png',
         stock: 10,
-        description: 'Nueva notebook vaio...'
+        descripcion: 'Nueva notebook vaio...'
     },
     {
         id: '2',
-        name: 'Procesador Ryzen',
-        price: 150000,
-        category: 'procesadores',
+        nombre: 'Procesador Ryzen',
+        precio: 150000,
+        categoria: 'procesadores',
         img: 'src/components/assets/img/procesador.png',
         stock: 10,
-        description: 'Nuevo procesador Ryzen...'
+        descripcion: 'Nuevo procesador Ryzen...'
     },
     {
         id: '3',
-        name: 'Placa de Video Nvidia 1050ti',
-        price: 250000,
-        category: 'placasdevideo',
+        nombre: 'Placa de Video Nvidia 1050ti',
+        precio: 250000,
+        categoria: 'placasdevideo',
         img: 'src/components/assets/img/placadevideo.png',
         stock: 10,
-        description: 'Nueva placa de video Nvidia..'
+        descripcion: 'Nueva placa de video Nvidia..'
     },
 ]
 
 export const getProducts = () => {
-    return new Promise ((resolve) =>{
-        setTimeout(()=>{
-            resolve (products)
-        }, 1000)
-    })
-}
-
-export const getProductByCategory = (category) => {
-    return new Promise ((resolve) =>{
-        setTimeout (()=>{
-            resolve (products.filter ((product)=> product.category===category))
-        }, 1000 )
-    })
-}
-
-export const getProductById =(productId) => {
-    return new Promise ((resolve) => {
+    return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === productId))
-        }, 1000)
-    })
-}
+            resolve(products);
+        }, 600);
+    });
+};
+
+export const getProductById = (productId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.find((prod) => prod.id === productId));
+        }, 600);
+    });
+};
+
+export const getProductsByCategoria = (categoriaId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.filter((prod) => prod.categoria === categoriaId));
+        }, 600);
+    });
+};
+export const productos = products;

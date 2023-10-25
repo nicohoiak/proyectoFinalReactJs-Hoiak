@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { CartContext} from '../../context/CartContext'
 
-const CartItem = ({item}) =>{
+/* const CartItem = ({item}) =>{
     const {removeItem} = useContext(CartContext)
 return (
     <div>
@@ -14,6 +14,21 @@ return (
     </div>
     
 )
-}
-
-export default CartItem
+} */
+const CartItem = ({ item }) => {
+  const { deleteItem } = useContext(CartContext);
+  return (
+    <div>
+      <img src={item.img} alt="Imagen producto"/>
+      <p>{item.nombre}</p>
+      <p>Precio: ${item.precio}</p>
+      <p>Cantidad : {item.cantidad}</p>
+      <p>Subtotal : $ {item.cantidad * item.precio}</p>
+      <button onClick={() => deleteItem(item.id)}>
+        {" "}
+        X{" "}
+      </button>
+    </div>
+  );
+};
+export default CartItem;

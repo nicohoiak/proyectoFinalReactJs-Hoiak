@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ItemCount from "../ItemCount/ItemCount"
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 
-const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
+/* const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
     const [quantityAdded, setQuantityAdded] = useState(0)
 
     const { addItem } = useContext (CartContext)
@@ -45,6 +45,33 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
             </footer>
         </article>
     )
-}
+} */
 
-export default ItemDetail
+const ItemDetail = ({ product }) => {
+    const [cantidadAgregada, setCantidadAgregada] = useState("");
+    const { addItem } = useContext(CartContext);
+    const adicion = (cantidad) => {
+        setCantidadAgregada(cantidad);
+        addItem(product, cantidad);
+    };
+    console.log(product);
+    return (
+        <div>
+            <h2>{product.nombre}</h2>
+            <img src={product.img} alt={product.nombre} />
+            <p>Descripcion: {product.descripcion}</p>
+            <p>Categoria: {product.categoria}</p>
+            <p>Precio: ${product.precio}</p>
+            {cantidadAgregada ? (
+                <Link to="/cart">
+                    {" "}
+                    Ir al Carrito
+                </Link>
+            ) : (
+                <ItemCount inicial={1} stock={product.stock} adicion={adicion} />
+            )}
+        </div>
+    );
+};
+
+export default ItemDetail;

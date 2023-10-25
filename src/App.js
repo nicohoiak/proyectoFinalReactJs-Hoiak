@@ -3,9 +3,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import React, { useEffect } from 'react';
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import { CartProvider } from './context/CartContext';
+import { db } from './Services/firebase';
 
 
 function App() {
